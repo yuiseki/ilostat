@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ILOSTAT Bulk Download</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <style></style>
+
+    <script>
+        function filterTable() {
+            const filter = document.getElementById('filter-input').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+			
+            rows.forEach(row => {
+                const fileName = row.cells[0].textContent.toLowerCase();
+                row.style.display = fileName.includes(filter) ? '' : 'none';
+            });
+        }
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.download-btn').forEach(button => {
+        button.addEventListener('click', function () {
+
+            const row = this.closest('tr');
+
+            const fileType = row.querySelector('.file-format-select').value;
+            const fileID = row.querySelector('.hidden-id').value;
+
+            if (fileID) {
+                const downloadURL = `${fileID}&type=code&format=${fileType}`;
+                window.location.href = downloadURL;
+            }
+        });
+    });
+});
+    </script>
+</head>
+
+
+<body>
+
+
+    <div class="filter-container">
+	
+        <div>
+            <input type="text" id="filter-input" placeholder="Search by file name..." onkeyup="filterTable()">
+        </div>
+        <div class="last-update">
+            Last update: 2026-10-03
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width:50%">file name</th>
+                <th style="width:20%">last.update</th>
+                <th style="width:10%">select format</th>
+                <th style="width:5%">download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://ilostat.ilo.org/data/bulk/" style="text-decoration: none; color: #1E2DBE; font-weight: bold;">&#8593; Up one level</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr><td><a href="https://rplumber.ilo.org/metadata/dic?var=cl_age.par&format=.csv">cl_age.par</a></td><td>2026-10-03</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/dic/?var=cl_age."></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/dic?var=cl_age&format=.csv">cl_age</a></td><td>2026-10-03</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/dic/?var=cl_"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/dic?var=cl_age_en.par&format=.csv">cl_age_en.par</a></td><td>2026-10-03</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/dic/?var=cl_age_en."></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/dic?var=cl_age&lang=en&format=.csv">cl_age_en</a></td><td>2026-10-03</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/dic/?var=cl_age"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/dic?var=subject&lang=fr&format=.csv">subject_fr</a></td><td>2026-10-03</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/dic/?var=subject"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr>
+</tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>ILOSTAT Bulk Download</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <style></style>
+
+    <script>
+        function filterTable() {
+            const filter = document.getElementById('filter-input').value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+			
+
+            rows.forEach(row => {
+                const fileName = row.cells[0].textContent.toLowerCase();
+                row.style.display = fileName.includes(filter) ? '' : 'none';
+            });
+        }
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.download-btn').forEach(button => {
+        button.addEventListener('click', function () {
+
+            const row = this.closest('tr');
+
+            const fileType = row.querySelector('.file-format-select').value;
+            const fileID = row.querySelector('.hidden-id').value;
+
+            if (fileID) {
+                const downloadURL = `${fileID}&type=code&format=${fileType}`;
+                window.location.href = downloadURL;
+            }
+        });
+    });
+});
+    </script>
+</head>
+
+
+
+<body>
+
+
+
+
+    <div class="filter-container">
+	
+        <div>
+            <input type="text" id="filter-input" placeholder="Search by file name..." onkeyup="filterTable()">
+        </div>
+        <div class="last-update">
+            Last update: 2026-10-03
+        </div>
+    </div>
+
+    <table>
+	
+        <thead>
+            <tr>
+                <th style="width:40%">file name</th>
+                <th style="width:15%">last.update</th>
+                <th style="width:15%">n.records</th>
+                <th style="width:15%">n.ref_area</th>
+                <th style="width:10%">select format</th>
+                <th style="width:5%">download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://ilostat.ilo.org/data/bulk/">&#8593; Up one level</a></td>
+                <td align="right"></td>
+                <td align="center"></td>
+                <td align="center"></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr><td><a href="https://rplumber.ilo.org/metadata/toc/indicator?lang=en&format=.csv">table_of_contents_en</a></td><td>2026-10-03</td><td></td><td></td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/toc/indicator?lang=en"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/toc/indicator?lang=fr&format=.csv">table_of_contents_fr</a></td><td>2026-10-03</td><td></td><td></td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/toc/indicator?lang=fr"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href="https://rplumber.ilo.org/metadata/toc/indicator?lang=es&format=.csv">table_of_contents_es</a></td><td>2026-10-03</td><td></td><td></td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/metadata/toc/indicator?lang=es"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href=" https://rplumber.ilo.org/data/indicator?id=SDG_0111_SEX_AGE_RT_A&format=.csv.gz">SDG_0111_SEX_AGE_RT_A</a></td><td>2025-12-03</td><td>42030</td><td>193</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/data/indicator?id=SDG_0111_SEX_AGE_RT_A"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr><tr><td><a href=" https://rplumber.ilo.org/data/indicator?id=INJ_WORK_SEX_MIG_NB_A&format=.csv.gz">INJ_WORK_SEX_MIG_NB_A</a></td><td>2026-07-01</td><td>4436</td><td>117</td><td><select name="file-format" class="file-format-select">
+            <option value=".csv.gz">.csv.gz</option>
+            <option value=".csv">.csv</option>
+            <option value=".dta">.dta</option>
+            <option value=".csv2">.csv2</option>
+            <option value=".feather">.feather</option>
+            <option value=".parquet">.rds</option>
+            <option value=".parquet">.parquet</option>
+            <option value=".tsv">.tsv</option>
+            <option value=".json">.json</option><option value=".xlsx">.xlsx</option>
+        </select><input type="hidden" class="hidden-id" value="https://rplumber.ilo.org/data/indicator?id=INJ_WORK_SEX_MIG_NB_A"></td><td><button class="download-btn">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24"
+         height="24"
+         viewBox="0 0 16 16"
+         fill="currentColor">
+        <path d="M.5 9.9v3.6A1.5 1.5 0 0 0 2 15h12a1.5 1.5 0 0 0 1.5-1.5V9.9h-1V13.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V9.9h-1z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3-.708-.708L8.5 10.293V1.5h-1v8.793L5.354 8.146l-.708.708 3 3z"/>
+    </svg>
+</button></td></tr>
+</tbody>
+    </table>
+
+</body>
+</html>
