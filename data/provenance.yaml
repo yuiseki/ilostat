@@ -1,0 +1,26 @@
+# Where this data comes from and what was done to it.
+
+source:
+  name: ILOSTAT bulk download
+  publisher: International Labour Organization (ILO)
+  portal: https://ilostat.ilo.org/data/bulk/
+  versions: none. The server regenerates daily; this dataset holds the newest run and follows upstream corrections.
+  licence:
+    applied: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) for what the ILO published on or after 2023-05-03 (https://www.ilo.org/rights-and-permissions)
+    card: "license: cc-by-4.0"
+    attribution_required: true
+    left_out_because_last_update_before_2023_05_03:
+    - indicator/ILR_CBCT_NOC_RT_A.csv.gz
+  citation: >-
+    International Labour Organization (ILO). ILOSTAT bulk download, https://ilostat.ilo.org/data/bulk/,
+    accessed 2026-10-04. Licence: CC BY 4.0.
+
+run:
+  date: 2026-10-04
+  indicator_files_published: 1963
+  dictionary_files_published: 244
+  files_left_out: 1
+  failed_downloads: 244  # the .par dictionary variants, HTTP 500
+
+processing:
+  - none: the files are as served, each read to the end and its rows counted against the listing
