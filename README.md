@@ -31,7 +31,7 @@ are recorded under `failed` in the manifest.
 ILO databases and datasets published on or after 3 May 2023 are licensed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); cite the ILO as the source
 ([ILO rights and permissions](https://www.ilo.org/rights-and-permissions)). Datasets produced
-before that date do not automatically fall under CC BY 4.0, and a few files in the listing carry a
+before that date do not automatically fall under CC BY 4.0, and one file in the listing carries a
 `last.update` earlier than 3 May 2023; the ILO name and emblem may not be used without permission.
 
 ## How to run

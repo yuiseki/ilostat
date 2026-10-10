@@ -114,7 +114,7 @@ taken.
 The ILO licenses the databases and datasets it published on or after 3 May 2023 under CC BY
 4.0 ({RIGHTS}) and says earlier ones do not automatically fall under it. An indicator file
 whose `last.update` in the listing is earlier than 3 May 2023 is therefore not published
-here (it is in the collection repository's manifest):
+here (`MANIFEST.json` still lists it):
 
 {out}
 
@@ -132,7 +132,7 @@ Organization, unchanged.
 Databases and datasets the ILO published on or after 3 May 2023 are licensed under CC BY 4.0
 ({CC}); cite the ILO as the source ({RIGHTS}). The ILO name and emblem may not be used
 without permission. Datasets produced before 3 May 2023 do not automatically fall under CC
-BY 4.0; the {len(f["out"])} indicator files whose last.update is earlier are not included.
+BY 4.0; the {len(f["out"])} indicator file(s) whose last.update is earlier are not included.
 
 The code of the repository this dataset was built from is MIT licensed.
 """

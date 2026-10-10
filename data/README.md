@@ -64,7 +64,7 @@ taken.
 The ILO licenses the databases and datasets it published on or after 3 May 2023 under CC BY
 4.0 (https://www.ilo.org/rights-and-permissions) and says earlier ones do not automatically fall under it. An indicator file
 whose `last.update` in the listing is earlier than 3 May 2023 is therefore not published
-here (it is in the collection repository's manifest):
+here (`MANIFEST.json` still lists it):
 
 - `indicator/ILR_CBCT_NOC_RT_A.csv.gz` (last.update 2022-05-03, 5,140 bytes)
 
